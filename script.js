@@ -9,9 +9,6 @@ const pitchInput = document.querySelector('#pitch');
 
 
 
-console.log(window)
-
-
 const speechSynth = window.speechSynthesis;
 
 
