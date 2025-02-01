@@ -12,7 +12,7 @@ const pitchInput = document.querySelector('#pitch');
 console.log(window)
 
 
-const speechSynth = window.SpeechSynthesis;
+const speechSynth = window.speechSynthesis;
 
 
 speechSynth.getVoices().forEach(voice => console.log(voice.name))
