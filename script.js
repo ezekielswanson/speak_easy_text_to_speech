@@ -4,9 +4,8 @@
 const textInput = document.querySelector('#txt');  
 const rateInput = document.querySelector('#rate');  
 const pitchInput = document.querySelector('#pitch');  
-const voiceOptions = document.querySelector('selector')
+const voiceOptions = document.querySelector('select')
 
-console.log(voiceOptions)
 
 
 
@@ -35,6 +34,22 @@ get these list of voice
 -voices only display when an on voiceschanged event occurs
 
 
+purposse
+-display list of voice in the select tag
+
+input
+-need to access the global selectr var
+
+ouput
+-display list of voice
+
+
+steps
+
+
+-create new options
+
+
 
 
 
@@ -47,8 +62,33 @@ speechSynth.addEventListener("voiceschanged", () => {
     //how do I read docuemnation to see what methods I need, etc
     //a method generall retunrs somehting so that's why we store in var?
     //update this code
+
+
+
+
+    //returns a list of voices from the system
     const voices = speechSynth.getVoices();
-    speechSynth.getVoices().forEach(voice => console.log(voice.name))
+    //speechSynth.getVoices().forEach(voice => console.log(voice.name))
+
+    /*
+    think about where the voices live?
+        -in an array
+        -I want the voice the user selected [i]
+
+
+    */
+        
+
+    voices.forEach(voice => {
+        const options = document.createElement("option")
+        console.log(options)
+        options.textContent = `${voice.name} (${voice.lang})`
+        voiceOptions.append(options)
+    })
+    
+
+
+
 
 })
 
