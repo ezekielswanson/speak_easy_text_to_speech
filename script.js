@@ -1,97 +1,86 @@
+//Write the full program out in english first
+
+
+/*
+
+User inputs text
+selects the voice
+hits play
+text plays in selected voice
+*/
+
+
+
 //Selecting inputs
 
 
 const textInput = document.querySelector('#txt');  
 const rateInput = document.querySelector('#rate');  
 const pitchInput = document.querySelector('#pitch');  
-const voiceOptions = document.querySelector('select')
-
-
-
-
+const voiceOptions = document.querySelector('select');
+const playBtn = document.querySelector('#play');
 
 //Gives me access to the API
 const speechSynth = window.speechSynthesis;
 
-//Voices function
-
-/*
-get these list of voice
-    Samantha
-    script.js:30 Aaron
-    script.js:30 Albert
-    script.js:30 Alice
-    script.js:30 Alva
-    script.js:30 Amélie
-    script.js:30 Amira
-    script.js:30 Anna
-    script.js:30 Arthur
-    script.js:30 Bad News
-    script.js:30 Bahh
-    script.js:30 Bells
-
--store & display those voice in the seelect tag
--voices only display when an on voiceschanged event occurs
-
-
-purposse
--display list of voice in the select tag
-
-input
--need to access the global selectr var
-
-ouput
--display list of voice
-
-
-steps
-
-
--create new options
-
-
-
-
-
-
-*/
-
+//Get voices function
 speechSynth.addEventListener("voiceschanged", () => {
-
-    //On the speech synt object get voices methdo and store in var
-    //how do I read docuemnation to see what methods I need, etc
-    //a method generall retunrs somehting so that's why we store in var?
-    //update this code
-
-
-
 
     //returns a list of voices from the system
     const voices = speechSynth.getVoices();
-    //speechSynth.getVoices().forEach(voice => console.log(voice.name))
-
-    /*
-    think about where the voices live?
-        -in an array
-        -I want the voice the user selected [i]
-
-
-    */
-        
 
     voices.forEach(voice => {
         const options = document.createElement("option")
-        console.log(options)
         options.textContent = `${voice.name} (${voice.lang})`
         voiceOptions.append(options)
     })
     
 
-
-
-
 })
 
+
+
+playBtn.addEventListener('click', () => {
+    const utterance = new SpeechSynthesisUtterance(textInput);
+    speechSynth.speak(utterance);
+    
+})
+
+
+
+
+/*
+
+
+Purpose 
+    -get text and play the speech back in the voice selected
+input 
+    -text input from user
+    -selected voice type
+
+outuput 
+    -place the text in the selected voice
+
+
+
+methods 
+SpeechSynthesisUtterance 
+ It contains the content the speech service
+should read and information about how to read it (e.g. language, pitch and volume.)
+
+
+properties 
+SpeechSynthesisUtterance.pitch
+Gets and sets the pitch at which the utterance will be spoken at.
+
+SpeechSynthesisUtterance.rate
+Gets and sets the speed at which the utterance will be spoken at.
+
+SpeechSynthesisUtterance.text
+Gets and sets the text that will be synthesized when the utterance is spoken.
+
+
+*/
 
 
 
