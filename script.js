@@ -40,8 +40,11 @@ speechSynth.addEventListener("voiceschanged", () => {
 
 
 
+//could potentially pass in voices, pitch, etc, as a param here to use voice
+
 playBtn.addEventListener('click', () => {
     const utterance = new SpeechSynthesisUtterance(textInput);
+    console.log(utterance)
     speechSynth.speak(utterance);
     
 })
