@@ -46,9 +46,12 @@ playBtn.addEventListener('click', (event) => {
     event.preventDefault();
 
     console.log('btn clicked');
+
+    /*
     const utterance = new SpeechSynthesisUtterance(textInput);
     console.log(utterance)
     speechSynth.speak(utterance);
+    */
     
 })
 
