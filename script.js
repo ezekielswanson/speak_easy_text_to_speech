@@ -38,20 +38,19 @@ speechSynth.addEventListener("voiceschanged", () => {
 
 })
 
-console.log('Play button element:', playBtn);
 
 //could potentially pass in voices, pitch, etc, as a param here to use voice
 
 playBtn.addEventListener('click', (event) => {
     event.preventDefault();
 
-    console.log('btn clicked');
+    //console.log('btn clicked');
 
-    /*
-    const utterance = new SpeechSynthesisUtterance(textInput);
+    
+    const utterance = new SpeechSynthesisUtterance(textInput.value);
     console.log(utterance)
     speechSynth.speak(utterance);
-    */
+    
     
 })
 
