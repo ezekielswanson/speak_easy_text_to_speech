@@ -14,7 +14,7 @@ text plays in selected voice
 //Selecting inputs
 
 
-const textInput = document.querySelector('#txt');  
+const textInput = document.querySelector('#txt').value;  
 const rateInput = document.querySelector('#rate');  
 const pitchInput = document.querySelector('#pitch');  
 const voiceOptions = document.querySelector('select');
