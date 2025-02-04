@@ -14,7 +14,7 @@ text plays in selected voice
 //Selecting inputs
 
 
-const textInput = document.querySelector('#txt').value;  
+const textInput = document.querySelector('#txt');  
 const rateInput = document.querySelector('#rate');  
 const pitchInput = document.querySelector('#pitch');  
 const voiceOptions = document.querySelector('select');
@@ -38,7 +38,7 @@ speechSynth.addEventListener("voiceschanged", () => {
 
 })
 
-
+console.log('Play button element:', playBtn);
 
 //could potentially pass in voices, pitch, etc, as a param here to use voice
 
