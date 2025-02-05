@@ -23,8 +23,11 @@ const playBtn = document.querySelector('#play');
 //Gives me access to the API
 const speechSynth = window.speechSynthesis;
 
+//need to load the voices in the array and access the voices in the event listener
+let voices;
+
 //Get voices function
-speechSynth.addEventListener("voiceschanged", () => {
+function loadVoices() {
 
     //returns a list of voices from the system
     const voices = speechSynth.getVoices();
@@ -34,9 +37,17 @@ speechSynth.addEventListener("voiceschanged", () => {
         options.textContent = `${voice.name} (${voice.lang})`
         voiceOptions.append(options)
     })
-    
+        
+}
 
-})
+
+ // in Google Chrome the voices are not ready on page load
+if ("onvoiceschanged" in speechSynth) {
+    synth.onvoiceschanged = loadVoices;
+  } else {
+    loadVoices();
+  }
+
 
 
 //could potentially pass in voices, pitch, etc, as a param here to use voice
