@@ -52,14 +52,17 @@ if ("onvoiceschanged" in speechSynth) {
 
 //could potentially pass in voices, pitch, etc, as a param here to use voice
 
-playBtn.addEventListener('click', () => {
+playBtn.addEventListener('click', (voices) => {
   
 
     //console.log('btn clicked');
 
+    //see what values I can pass into the SpeechSynthesisUtterance()
+
     
-    const utterance = new SpeechSynthesisUtterance(textInput.value);
+    const utterance = new SpeechSynthesisUtterance(textInput.value, voices);
     console.log(utterance)
+    utterance.voice = voices[voiceOptions.value];
     speechSynth.speak(utterance);
     
     
