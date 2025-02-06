@@ -34,8 +34,9 @@ function loadVoices() {
 
     voices.forEach(voice => {
         const options = document.createElement("option");
-        options.textContent = `${voice.name} (${voice.lang})`
-        voiceOptions.append(options)
+        options.textContent = `${voice.name} (${voice.lang})`;
+        selectedVoice = options.value;
+        voiceOptions.append(selectedVoice)
         
     })
         
