@@ -65,7 +65,7 @@ playBtn.addEventListener('click', (e) => {
 
     
     const utterance = new SpeechSynthesisUtterance(textInput.value);
-    //console.log(utterance)
+    console.log(utterance)
     console.log(voices);
     utterance.voice = voices[voiceOptions.value];
     speechSynth.speak(utterance);
