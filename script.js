@@ -48,11 +48,13 @@ if ("onvoiceschanged" in speechSynth) {
     loadVoices();
   }
 
+  console.log(voices)
+
 
 
 //could potentially pass in voices, pitch, etc, as a param here to use voice
 
-playBtn.addEventListener('click', (voices) => {
+playBtn.addEventListener('click', () => {
   
 
     //console.log('btn clicked');
