@@ -29,8 +29,8 @@ let voices;
 //Get voices function
 function loadVoices() {
 
-    //returns a list of voices from the system
-    const voices = speechSynth.getVoices();
+    //and assing the global value returns a list of voices from the system
+    voices = speechSynth.getVoices();
 
     voices.forEach((voice, i) => {
         //console.log(voice);
