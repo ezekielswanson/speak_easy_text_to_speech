@@ -43,7 +43,7 @@ function loadVoices() {
 
  // in Google Chrome the voices are not ready on page load
 if ("onvoiceschanged" in speechSynth) {
-    synth.onvoiceschanged = loadVoices;
+    speechSynth.onvoiceschanged = loadVoices;
   } else {
     loadVoices();
   }
