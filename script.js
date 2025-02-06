@@ -48,7 +48,7 @@ if ("onvoiceschanged" in speechSynth) {
     loadVoices();
   }
 
-  console.log(voices)
+
 
 
 
