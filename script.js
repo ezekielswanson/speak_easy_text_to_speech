@@ -57,7 +57,7 @@ if ("onvoiceschanged" in speechSynth) {
 playBtn.addEventListener('click', () => {
   
 
-    //console.log('btn clicked');
+    console.log('btn clicked');
 
     //see what values I can pass into the SpeechSynthesisUtterance()
 
