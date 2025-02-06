@@ -32,14 +32,13 @@ function loadVoices() {
     //returns a list of voices from the system
     const voices = speechSynth.getVoices();
 
-    voices.forEach(voice => {
-        console.log(voice);
+    voices.forEach((voice, i) => {
+        //console.log(voice);
         const options = document.createElement("option");
         options.textContent = `${voice.name} (${voice.lang})`;
-       // options.value = value
-        voiceOptions.append(options)
-        
-    })
+        options.value = i;
+        voiceOptions.append(options);
+    });
         
 }
 
