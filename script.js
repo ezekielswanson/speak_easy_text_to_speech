@@ -33,9 +33,10 @@ function loadVoices() {
     const voices = speechSynth.getVoices();
 
     voices.forEach(voice => {
+        console.log(voice);
         const options = document.createElement("option");
         options.textContent = `${voice.name} (${voice.lang})`;
-        options.value = voice;
+       // options.value = value
         voiceOptions.append(options)
         
     })
